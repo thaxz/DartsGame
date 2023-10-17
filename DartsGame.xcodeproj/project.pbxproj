@@ -11,6 +11,7 @@
 		E9DC2CDC2ADF3CEF009128D6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2CDB2ADF3CEF009128D6 /* ContentView.swift */; };
 		E9DC2CDE2ADF3CF1009128D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9DC2CDD2ADF3CF1009128D6 /* Assets.xcassets */; };
 		E9DC2CE12ADF3CF1009128D6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9DC2CE02ADF3CF1009128D6 /* Preview Assets.xcassets */; };
+		E9DC2CE92ADF3DE5009128D6 /* explosion.scnp in Resources */ = {isa = PBXBuildFile; fileRef = E9DC2CE82ADF3DE5009128D6 /* explosion.scnp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,9 @@
 		E9DC2CDB2ADF3CEF009128D6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E9DC2CDD2ADF3CF1009128D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9DC2CE02ADF3CF1009128D6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E9DC2CE82ADF3DE5009128D6 /* explosion.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = explosion.scnp; sourceTree = "<group>"; };
+		E9DC2CEA2ADF3DF0009128D6 /* Futura-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futura-Bold.ttf"; sourceTree = "<group>"; };
+		E9DC2CEB2ADF3DF0009128D6 /* Futura-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futura-Medium.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 				E9DC2CD92ADF3CEF009128D6 /* DartsGameApp.swift */,
 				E9DC2CDB2ADF3CEF009128D6 /* ContentView.swift */,
 				E9DC2CDD2ADF3CF1009128D6 /* Assets.xcassets */,
+				E9DC2CE72ADF3DCC009128D6 /* Resources */,
 				E9DC2CDF2ADF3CF1009128D6 /* Preview Content */,
 			);
 			path = DartsGame;
@@ -65,6 +70,16 @@
 				E9DC2CE02ADF3CF1009128D6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E9DC2CE72ADF3DCC009128D6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E9DC2CEA2ADF3DF0009128D6 /* Futura-Bold.ttf */,
+				E9DC2CEB2ADF3DF0009128D6 /* Futura-Medium.ttf */,
+				E9DC2CE82ADF3DE5009128D6 /* explosion.scnp */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +140,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9DC2CE92ADF3DE5009128D6 /* explosion.scnp in Resources */,
 				E9DC2CE12ADF3CF1009128D6 /* Preview Assets.xcassets in Resources */,
 				E9DC2CDE2ADF3CF1009128D6 /* Assets.xcassets in Resources */,
 			);
