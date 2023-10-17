@@ -8,22 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		E9DC2CDA2ADF3CEF009128D6 /* DartsGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2CD92ADF3CEF009128D6 /* DartsGameApp.swift */; };
-		E9DC2CDC2ADF3CEF009128D6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2CDB2ADF3CEF009128D6 /* ContentView.swift */; };
+		E9DC2CDC2ADF3CEF009128D6 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2CDB2ADF3CEF009128D6 /* MenuView.swift */; };
 		E9DC2CDE2ADF3CF1009128D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9DC2CDD2ADF3CF1009128D6 /* Assets.xcassets */; };
 		E9DC2CE12ADF3CF1009128D6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9DC2CE02ADF3CF1009128D6 /* Preview Assets.xcassets */; };
 		E9DC2CE92ADF3DE5009128D6 /* explosion.scnp in Resources */ = {isa = PBXBuildFile; fileRef = E9DC2CE82ADF3DE5009128D6 /* explosion.scnp */; };
+		E9DC2CF12ADF3F38009128D6 /* DartRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2CF02ADF3F38009128D6 /* DartRow.swift */; };
+		E9DC2CF32ADF3F49009128D6 /* MatchesRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2CF22ADF3F49009128D6 /* MatchesRow.swift */; };
+		E9DC2CF62ADF3F6C009128D6 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2CF52ADF3F6C009128D6 /* Color.swift */; };
+		E9DC2CF92ADF3F8B009128D6 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2CF82ADF3F8B009128D6 /* Match.swift */; };
+		E9DC2CFC2ADF3FAD009128D6 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2CFB2ADF3FAD009128D6 /* PrimaryButton.swift */; };
+		E9DC2CFE2ADF3FBA009128D6 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2CFD2ADF3FBA009128D6 /* SecondaryButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E9DC2CD62ADF3CEF009128D6 /* DartsGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DartsGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9DC2CD92ADF3CEF009128D6 /* DartsGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DartsGameApp.swift; sourceTree = "<group>"; };
-		E9DC2CDB2ADF3CEF009128D6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E9DC2CDB2ADF3CEF009128D6 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		E9DC2CDD2ADF3CF1009128D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9DC2CE02ADF3CF1009128D6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E9DC2CE82ADF3DE5009128D6 /* explosion.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = explosion.scnp; sourceTree = "<group>"; };
 		E9DC2CEA2ADF3DF0009128D6 /* Futura-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futura-Bold.ttf"; sourceTree = "<group>"; };
 		E9DC2CEB2ADF3DF0009128D6 /* Futura-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futura-Medium.ttf"; sourceTree = "<group>"; };
 		E9DC2CEC2ADF3E65009128D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E9DC2CF02ADF3F38009128D6 /* DartRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DartRow.swift; sourceTree = "<group>"; };
+		E9DC2CF22ADF3F49009128D6 /* MatchesRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesRow.swift; sourceTree = "<group>"; };
+		E9DC2CF52ADF3F6C009128D6 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		E9DC2CF82ADF3F8B009128D6 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		E9DC2CFB2ADF3FAD009128D6 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		E9DC2CFD2ADF3FBA009128D6 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,11 +68,13 @@
 		E9DC2CD82ADF3CEF009128D6 /* DartsGame */ = {
 			isa = PBXGroup;
 			children = (
-				E9DC2CEC2ADF3E65009128D6 /* Info.plist */,
 				E9DC2CD92ADF3CEF009128D6 /* DartsGameApp.swift */,
-				E9DC2CDB2ADF3CEF009128D6 /* ContentView.swift */,
-				E9DC2CDD2ADF3CF1009128D6 /* Assets.xcassets */,
+				E9DC2CF72ADF3F83009128D6 /* Models */,
+				E9DC2CED2ADF3F01009128D6 /* Views */,
+				E9DC2CF42ADF3F5E009128D6 /* Extensions */,
 				E9DC2CE72ADF3DCC009128D6 /* Resources */,
+				E9DC2CDD2ADF3CF1009128D6 /* Assets.xcassets */,
+				E9DC2CEC2ADF3E65009128D6 /* Info.plist */,
 				E9DC2CDF2ADF3CF1009128D6 /* Preview Content */,
 			);
 			path = DartsGame;
@@ -82,6 +96,58 @@
 				E9DC2CE82ADF3DE5009128D6 /* explosion.scnp */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		E9DC2CED2ADF3F01009128D6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E9DC2CEE2ADF3F18009128D6 /* Components */,
+				E9DC2CDB2ADF3CEF009128D6 /* MenuView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E9DC2CEE2ADF3F18009128D6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E9DC2CFA2ADF3F9C009128D6 /* Buttons */,
+				E9DC2CEF2ADF3F28009128D6 /* Rows */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E9DC2CEF2ADF3F28009128D6 /* Rows */ = {
+			isa = PBXGroup;
+			children = (
+				E9DC2CF02ADF3F38009128D6 /* DartRow.swift */,
+				E9DC2CF22ADF3F49009128D6 /* MatchesRow.swift */,
+			);
+			path = Rows;
+			sourceTree = "<group>";
+		};
+		E9DC2CF42ADF3F5E009128D6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E9DC2CF52ADF3F6C009128D6 /* Color.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E9DC2CF72ADF3F83009128D6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E9DC2CF82ADF3F8B009128D6 /* Match.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E9DC2CFA2ADF3F9C009128D6 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				E9DC2CFB2ADF3FAD009128D6 /* PrimaryButton.swift */,
+				E9DC2CFD2ADF3FBA009128D6 /* SecondaryButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,8 +221,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9DC2CDC2ADF3CEF009128D6 /* ContentView.swift in Sources */,
+				E9DC2CF32ADF3F49009128D6 /* MatchesRow.swift in Sources */,
+				E9DC2CF12ADF3F38009128D6 /* DartRow.swift in Sources */,
+				E9DC2CDC2ADF3CEF009128D6 /* MenuView.swift in Sources */,
+				E9DC2CF62ADF3F6C009128D6 /* Color.swift in Sources */,
+				E9DC2CFE2ADF3FBA009128D6 /* SecondaryButton.swift in Sources */,
+				E9DC2CFC2ADF3FAD009128D6 /* PrimaryButton.swift in Sources */,
 				E9DC2CDA2ADF3CEF009128D6 /* DartsGameApp.swift in Sources */,
+				E9DC2CF92ADF3F8B009128D6 /* Match.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
