@@ -35,6 +35,8 @@
 		E9DC2D212ADF41C9009128D6 /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2D202ADF41C9009128D6 /* ARViewContainer.swift */; };
 		E9DC2D232ADF41E7009128D6 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2D222ADF41E7009128D6 /* GameViewController.swift */; };
 		E9DC2D252ADF42FC009128D6 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = E9DC2D242ADF42FC009128D6 /* spark.png */; };
+		E9DC2D272ADF435E009128D6 /* GameViewController+Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2D262ADF435E009128D6 /* GameViewController+Logic.swift */; };
+		E9DC2D292ADF44D4009128D6 /* GameViewController+Collisions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2D282ADF44D4009128D6 /* GameViewController+Collisions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		E9DC2D202ADF41C9009128D6 /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
 		E9DC2D222ADF41E7009128D6 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		E9DC2D242ADF42FC009128D6 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		E9DC2D262ADF435E009128D6 /* GameViewController+Logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+Logic.swift"; sourceTree = "<group>"; };
+		E9DC2D282ADF44D4009128D6 /* GameViewController+Collisions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+Collisions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +241,8 @@
 			children = (
 				E9DC2D202ADF41C9009128D6 /* ARViewContainer.swift */,
 				E9DC2D222ADF41E7009128D6 /* GameViewController.swift */,
+				E9DC2D262ADF435E009128D6 /* GameViewController+Logic.swift */,
+				E9DC2D282ADF44D4009128D6 /* GameViewController+Collisions.swift */,
 			);
 			path = ARViews;
 			sourceTree = "<group>";
@@ -326,6 +332,7 @@
 				E9DC2D122ADF4103009128D6 /* GameViewModel.swift in Sources */,
 				E9DC2D032ADF4051009128D6 /* ARManager.swift in Sources */,
 				E9DC2D052ADF4065009128D6 /* NavigationRouter.swift in Sources */,
+				E9DC2D292ADF44D4009128D6 /* GameViewController+Collisions.swift in Sources */,
 				E9DC2CFE2ADF3FBA009128D6 /* SecondaryButton.swift in Sources */,
 				E9DC2CFC2ADF3FAD009128D6 /* PrimaryButton.swift in Sources */,
 				E9DC2D0B2ADF409C009128D6 /* SoundEffects.swift in Sources */,
@@ -337,6 +344,7 @@
 				E9DC2D182ADF4146009128D6 /* PreviousMatchesView.swift in Sources */,
 				E9DC2D0F2ADF40E2009128D6 /* GameView.swift in Sources */,
 				E9DC2CF92ADF3F8B009128D6 /* Match.swift in Sources */,
+				E9DC2D272ADF435E009128D6 /* GameViewController+Logic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

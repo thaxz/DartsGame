@@ -21,10 +21,6 @@ class GameViewModel: ObservableObject {
     var endTime: Date? = nil
     var points: Int = 0
     
-    func changeBoard(){
-        ARManager.shared.actionsStream.send(.placeBoard)
-    }
-    
     func gameOver(){
         isGameOver = true
         endTime = Date()

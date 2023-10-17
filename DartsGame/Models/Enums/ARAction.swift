@@ -11,8 +11,6 @@ import SwiftUI
 enum ARAction {
     
     case placeDart
-    case placeBoard
-    case removeDart
     case pause
     case play
 }

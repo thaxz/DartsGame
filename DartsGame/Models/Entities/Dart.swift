@@ -9,7 +9,7 @@ import Foundation
 import SceneKit
 
 // Darts that are shot
-class MyDart: SCNNode {
+class Dart: SCNNode {
     override init () {
         super.init()
         let sphere = SCNSphere(radius: 0.025)

@@ -10,7 +10,6 @@ import ARKit
 
 struct GameView: View {
     
-    @Environment(\.presentationMode) var presentationMode
     @StateObject private var viewModel = GameViewModel()
     
     @EnvironmentObject private var routerManager: NavigationRouter
@@ -69,11 +68,7 @@ extension GameView {
         Button {
             ARManager.shared.actionsStream.send(.placeDart)
             viewModel.throwNumber += 1
-            if viewModel.throwNumber < 5 {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3){
-                    viewModel.changeBoard()
-                }
-            } else if viewModel.throwNumber >= 5 {
+            if viewModel.throwNumber >= 5 {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3){
                     viewModel.gameOver()
                 }
