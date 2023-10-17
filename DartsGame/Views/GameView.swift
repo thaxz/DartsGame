@@ -18,6 +18,7 @@ struct GameView: View, GameLogicDelegate {
     
     mutating func addPoint() {
         self.totalScore += 1
+        self.viewModel.points += 1
     }
     
     var body: some View {
