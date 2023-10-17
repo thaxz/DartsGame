@@ -18,6 +18,13 @@
 		E9DC2CF92ADF3F8B009128D6 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2CF82ADF3F8B009128D6 /* Match.swift */; };
 		E9DC2CFC2ADF3FAD009128D6 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2CFB2ADF3FAD009128D6 /* PrimaryButton.swift */; };
 		E9DC2CFE2ADF3FBA009128D6 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2CFD2ADF3FBA009128D6 /* SecondaryButton.swift */; };
+		E9DC2D002ADF4023009128D6 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2CFF2ADF4023009128D6 /* PauseView.swift */; };
+		E9DC2D032ADF4051009128D6 /* ARManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2D022ADF4051009128D6 /* ARManager.swift */; };
+		E9DC2D052ADF4065009128D6 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2D042ADF4065009128D6 /* NavigationRouter.swift */; };
+		E9DC2D072ADF407C009128D6 /* ARAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2D062ADF407C009128D6 /* ARAction.swift */; };
+		E9DC2D092ADF4089009128D6 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2D082ADF4089009128D6 /* Route.swift */; };
+		E9DC2D0B2ADF409C009128D6 /* SoundEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2D0A2ADF409C009128D6 /* SoundEffects.swift */; };
+		E9DC2D0D2ADF40B2009128D6 /* Bitmask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2D0C2ADF40B2009128D6 /* Bitmask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +43,13 @@
 		E9DC2CF82ADF3F8B009128D6 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		E9DC2CFB2ADF3FAD009128D6 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		E9DC2CFD2ADF3FBA009128D6 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
+		E9DC2CFF2ADF4023009128D6 /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
+		E9DC2D022ADF4051009128D6 /* ARManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARManager.swift; sourceTree = "<group>"; };
+		E9DC2D042ADF4065009128D6 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
+		E9DC2D062ADF407C009128D6 /* ARAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARAction.swift; sourceTree = "<group>"; };
+		E9DC2D082ADF4089009128D6 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		E9DC2D0A2ADF409C009128D6 /* SoundEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffects.swift; sourceTree = "<group>"; };
+		E9DC2D0C2ADF40B2009128D6 /* Bitmask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitmask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				E9DC2CD92ADF3CEF009128D6 /* DartsGameApp.swift */,
+				E9DC2D012ADF4040009128D6 /* Managers */,
 				E9DC2CF72ADF3F83009128D6 /* Models */,
 				E9DC2CED2ADF3F01009128D6 /* Views */,
 				E9DC2CF42ADF3F5E009128D6 /* Extensions */,
@@ -103,6 +118,7 @@
 			children = (
 				E9DC2CEE2ADF3F18009128D6 /* Components */,
 				E9DC2CDB2ADF3CEF009128D6 /* MenuView.swift */,
+				E9DC2CFF2ADF4023009128D6 /* PauseView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -137,6 +153,10 @@
 			isa = PBXGroup;
 			children = (
 				E9DC2CF82ADF3F8B009128D6 /* Match.swift */,
+				E9DC2D062ADF407C009128D6 /* ARAction.swift */,
+				E9DC2D082ADF4089009128D6 /* Route.swift */,
+				E9DC2D0A2ADF409C009128D6 /* SoundEffects.swift */,
+				E9DC2D0C2ADF40B2009128D6 /* Bitmask.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -148,6 +168,15 @@
 				E9DC2CFD2ADF3FBA009128D6 /* SecondaryButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		E9DC2D012ADF4040009128D6 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E9DC2D022ADF4051009128D6 /* ARManager.swift */,
+				E9DC2D042ADF4065009128D6 /* NavigationRouter.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,10 +252,17 @@
 			files = (
 				E9DC2CF32ADF3F49009128D6 /* MatchesRow.swift in Sources */,
 				E9DC2CF12ADF3F38009128D6 /* DartRow.swift in Sources */,
+				E9DC2D072ADF407C009128D6 /* ARAction.swift in Sources */,
 				E9DC2CDC2ADF3CEF009128D6 /* MenuView.swift in Sources */,
+				E9DC2D092ADF4089009128D6 /* Route.swift in Sources */,
 				E9DC2CF62ADF3F6C009128D6 /* Color.swift in Sources */,
+				E9DC2D0D2ADF40B2009128D6 /* Bitmask.swift in Sources */,
+				E9DC2D032ADF4051009128D6 /* ARManager.swift in Sources */,
+				E9DC2D052ADF4065009128D6 /* NavigationRouter.swift in Sources */,
 				E9DC2CFE2ADF3FBA009128D6 /* SecondaryButton.swift in Sources */,
 				E9DC2CFC2ADF3FAD009128D6 /* PrimaryButton.swift in Sources */,
+				E9DC2D0B2ADF409C009128D6 /* SoundEffects.swift in Sources */,
+				E9DC2D002ADF4023009128D6 /* PauseView.swift in Sources */,
 				E9DC2CDA2ADF3CEF009128D6 /* DartsGameApp.swift in Sources */,
 				E9DC2CF92ADF3F8B009128D6 /* Match.swift in Sources */,
 			);
