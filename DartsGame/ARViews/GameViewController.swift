@@ -15,18 +15,8 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
     var gameLogicDelegate: GameLogicDelegate? = nil
     
     var sceneView: ARSCNView!
-    var scoreLabel: UILabel!
     var player: AVAudioPlayer!
     private var cancellables: Set<AnyCancellable> = []
-    
-    var userScore: Int = 0 {
-        didSet {
-            // ensure UI update runs on main thread
-            DispatchQueue.main.async {
-                self.scoreLabel.text = String(self.userScore)
-            }
-        }
-    }
     
     // MARK: View lifecycle
     
@@ -39,13 +29,6 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
         
         sceneView.scene = SCNScene()
         sceneView.scene.physicsWorld.contactDelegate = self
-        // todo: remove score label and pass to swiftui view through delegate
-        scoreLabel = UILabel()
-        scoreLabel.textAlignment = .center
-        scoreLabel.font = UIFont.systemFont(ofSize: 24)
-        scoreLabel.textColor = UIColor.white
-        view.addSubview(scoreLabel)
-        self.userScore = 0
         self.addNewBoard()
         self.subscribeToActionStream()
     }
@@ -63,7 +46,6 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         sceneView.frame = view.bounds
-        scoreLabel.frame = CGRect(x: 20, y: 20, width: view.bounds.width - 40, height: 50)
     }
     
     // MARK: Combine
