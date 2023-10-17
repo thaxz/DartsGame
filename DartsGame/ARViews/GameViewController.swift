@@ -12,6 +12,8 @@ import Combine
 
 class GameViewController: UIViewController, ARSCNViewDelegate {
     
+    var gameLogicDelegate: GameLogicDelegate? = nil
+    
     var sceneView: ARSCNView!
     var scoreLabel: UILabel!
     var player: AVAudioPlayer!
@@ -80,4 +82,15 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
             .store(in: &cancellables)
     }
     
+}
+
+// MARK: Delegate
+
+extension GameViewController {
+    
+    func addPoint() {
+        if var gameLogicDelegate = self.gameLogicDelegate {
+            gameLogicDelegate.addPoint()
+        }
+    }
 }

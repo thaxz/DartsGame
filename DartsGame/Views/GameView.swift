@@ -8,21 +8,26 @@
 import SwiftUI
 import ARKit
 
-struct GameView: View {
+struct GameView: View, GameLogicDelegate {
     
     @StateObject private var viewModel = GameViewModel()
-    
     @EnvironmentObject private var routerManager: NavigationRouter
     
+    @State var totalScore: Int = 0
     @State var isPaused: Bool = false
+    
+    mutating func addPoint() {
+        self.totalScore += 1
+    }
     
     var body: some View {
         ZStack {
-            ARViewContainer()
+            ARViewContainer(delegate: self)
                 .ignoresSafeArea()
-            VStack {
+            VStack(spacing: 8){
                 headerSection
                 Spacer()
+                dartsLeft
                 trowButton
             }
             .padding(40)
@@ -47,7 +52,7 @@ extension GameView {
     var headerSection: some View{
         HStack{
             Spacer()
-            Text("Darts thrown: \(viewModel.throwNumber)")
+            Text("Score: \(totalScore)")
                 .font(.custom("Futura-Bold", size: 22))
                 .foregroundColor(.white)
             Spacer()
@@ -63,6 +68,11 @@ extension GameView {
         }
     }
     
+    var dartsLeft: some View{
+        Text("Dart \(viewModel.throwNumber) of 5")
+            .font(.custom("Futura-Bold", size: 18))
+            .foregroundColor(.white)
+    }
     
     var trowButton: some View {
         Button {
@@ -85,9 +95,6 @@ extension GameView {
         .frame(maxWidth: .infinity)
         .frame(height: 60)
     }
-    
-    
-    
 }
 
 struct ContentView_Previews: PreviewProvider {

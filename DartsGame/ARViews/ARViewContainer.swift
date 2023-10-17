@@ -11,10 +11,13 @@ import ARKit
 
 struct ARViewContainer: UIViewControllerRepresentable {
     
+    let delegate: GameLogicDelegate
+    
     typealias UIViewControllerType = GameViewController
 
     func makeUIViewController(context: Context) -> GameViewController {
         let viewController = GameViewController()
+        viewController.gameLogicDelegate = delegate
         return viewController
     }
 

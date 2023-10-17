@@ -17,7 +17,7 @@ extension GameViewController: SCNPhysicsContactDelegate {
             print("Hit board!")
             self.removeNodeWithAnimation(contact.nodeB, explosion: false) // remove dart
             self.userScore += 1
-            
+            self.addPoint()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: { // remove&replace board
                 self.removeNodeWithAnimation(contact.nodeA, explosion: true)
                 self.addNewBoard()

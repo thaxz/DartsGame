@@ -37,6 +37,7 @@
 		E9DC2D252ADF42FC009128D6 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = E9DC2D242ADF42FC009128D6 /* spark.png */; };
 		E9DC2D272ADF435E009128D6 /* GameViewController+Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2D262ADF435E009128D6 /* GameViewController+Logic.swift */; };
 		E9DC2D292ADF44D4009128D6 /* GameViewController+Collisions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2D282ADF44D4009128D6 /* GameViewController+Collisions.swift */; };
+		E9DC2D2C2ADF5010009128D6 /* GameLogicDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2D2B2ADF5010009128D6 /* GameLogicDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		E9DC2D242ADF42FC009128D6 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		E9DC2D262ADF435E009128D6 /* GameViewController+Logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+Logic.swift"; sourceTree = "<group>"; };
 		E9DC2D282ADF44D4009128D6 /* GameViewController+Collisions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+Collisions.swift"; sourceTree = "<group>"; };
+		E9DC2D2B2ADF5010009128D6 /* GameLogicDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogicDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 				E9DC2CF82ADF3F8B009128D6 /* Match.swift */,
 				E9DC2D0C2ADF40B2009128D6 /* Bitmask.swift */,
 				E9DC2D1A2ADF4174009128D6 /* Entities */,
+				E9DC2D2A2ADF5000009128D6 /* Protocols */,
 				E9DC2D192ADF4160009128D6 /* Enums */,
 			);
 			path = Models;
@@ -245,6 +248,14 @@
 				E9DC2D282ADF44D4009128D6 /* GameViewController+Collisions.swift */,
 			);
 			path = ARViews;
+			sourceTree = "<group>";
+		};
+		E9DC2D2A2ADF5000009128D6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E9DC2D2B2ADF5010009128D6 /* GameLogicDelegate.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +350,7 @@
 				E9DC2D1C2ADF418C009128D6 /* DartBoard.swift in Sources */,
 				E9DC2D002ADF4023009128D6 /* PauseView.swift in Sources */,
 				E9DC2CDA2ADF3CEF009128D6 /* DartsGameApp.swift in Sources */,
+				E9DC2D2C2ADF5010009128D6 /* GameLogicDelegate.swift in Sources */,
 				E9DC2D162ADF4137009128D6 /* DetailView.swift in Sources */,
 				E9DC2D212ADF41C9009128D6 /* ARViewContainer.swift in Sources */,
 				E9DC2D182ADF4146009128D6 /* PreviousMatchesView.swift in Sources */,
