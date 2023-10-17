@@ -19,7 +19,7 @@ struct GameView: View {
     
     var body: some View {
         ZStack {
-            ARDartsViewContainer()
+            ARViewContainer()
                 .ignoresSafeArea()
             VStack {
                 headerSection

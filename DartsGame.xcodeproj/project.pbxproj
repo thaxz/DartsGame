@@ -27,6 +27,13 @@
 		E9DC2D0D2ADF40B2009128D6 /* Bitmask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2D0C2ADF40B2009128D6 /* Bitmask.swift */; };
 		E9DC2D0F2ADF40E2009128D6 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2D0E2ADF40E2009128D6 /* GameView.swift */; };
 		E9DC2D122ADF4103009128D6 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2D112ADF4103009128D6 /* GameViewModel.swift */; };
+		E9DC2D142ADF4128009128D6 /* EndMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2D132ADF4128009128D6 /* EndMatchView.swift */; };
+		E9DC2D162ADF4137009128D6 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2D152ADF4137009128D6 /* DetailView.swift */; };
+		E9DC2D182ADF4146009128D6 /* PreviousMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2D172ADF4146009128D6 /* PreviousMatchesView.swift */; };
+		E9DC2D1C2ADF418C009128D6 /* DartBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2D1B2ADF418C009128D6 /* DartBoard.swift */; };
+		E9DC2D1E2ADF4199009128D6 /* Dart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2D1D2ADF4199009128D6 /* Dart.swift */; };
+		E9DC2D212ADF41C9009128D6 /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2D202ADF41C9009128D6 /* ARViewContainer.swift */; };
+		E9DC2D232ADF41E7009128D6 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2D222ADF41E7009128D6 /* GameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +61,13 @@
 		E9DC2D0C2ADF40B2009128D6 /* Bitmask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitmask.swift; sourceTree = "<group>"; };
 		E9DC2D0E2ADF40E2009128D6 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		E9DC2D112ADF4103009128D6 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		E9DC2D132ADF4128009128D6 /* EndMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndMatchView.swift; sourceTree = "<group>"; };
+		E9DC2D152ADF4137009128D6 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		E9DC2D172ADF4146009128D6 /* PreviousMatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousMatchesView.swift; sourceTree = "<group>"; };
+		E9DC2D1B2ADF418C009128D6 /* DartBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DartBoard.swift; sourceTree = "<group>"; };
+		E9DC2D1D2ADF4199009128D6 /* Dart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dart.swift; sourceTree = "<group>"; };
+		E9DC2D202ADF41C9009128D6 /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
+		E9DC2D222ADF41E7009128D6 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +103,7 @@
 				E9DC2CD92ADF3CEF009128D6 /* DartsGameApp.swift */,
 				E9DC2D012ADF4040009128D6 /* Managers */,
 				E9DC2CF72ADF3F83009128D6 /* Models */,
+				E9DC2D1F2ADF41AD009128D6 /* ARViews */,
 				E9DC2CED2ADF3F01009128D6 /* Views */,
 				E9DC2D102ADF40F0009128D6 /* ViewModels */,
 				E9DC2CF42ADF3F5E009128D6 /* Extensions */,
@@ -125,6 +140,9 @@
 				E9DC2CDB2ADF3CEF009128D6 /* MenuView.swift */,
 				E9DC2CFF2ADF4023009128D6 /* PauseView.swift */,
 				E9DC2D0E2ADF40E2009128D6 /* GameView.swift */,
+				E9DC2D132ADF4128009128D6 /* EndMatchView.swift */,
+				E9DC2D152ADF4137009128D6 /* DetailView.swift */,
+				E9DC2D172ADF4146009128D6 /* PreviousMatchesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -159,10 +177,9 @@
 			isa = PBXGroup;
 			children = (
 				E9DC2CF82ADF3F8B009128D6 /* Match.swift */,
-				E9DC2D062ADF407C009128D6 /* ARAction.swift */,
-				E9DC2D082ADF4089009128D6 /* Route.swift */,
-				E9DC2D0A2ADF409C009128D6 /* SoundEffects.swift */,
 				E9DC2D0C2ADF40B2009128D6 /* Bitmask.swift */,
+				E9DC2D1A2ADF4174009128D6 /* Entities */,
+				E9DC2D192ADF4160009128D6 /* Enums */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,6 +208,34 @@
 				E9DC2D112ADF4103009128D6 /* GameViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E9DC2D192ADF4160009128D6 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				E9DC2D062ADF407C009128D6 /* ARAction.swift */,
+				E9DC2D0A2ADF409C009128D6 /* SoundEffects.swift */,
+				E9DC2D082ADF4089009128D6 /* Route.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		E9DC2D1A2ADF4174009128D6 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				E9DC2D1B2ADF418C009128D6 /* DartBoard.swift */,
+				E9DC2D1D2ADF4199009128D6 /* Dart.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		E9DC2D1F2ADF41AD009128D6 /* ARViews */ = {
+			isa = PBXGroup;
+			children = (
+				E9DC2D202ADF41C9009128D6 /* ARViewContainer.swift */,
+				E9DC2D222ADF41E7009128D6 /* GameViewController.swift */,
+			);
+			path = ARViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,9 +309,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9DC2D142ADF4128009128D6 /* EndMatchView.swift in Sources */,
 				E9DC2CF32ADF3F49009128D6 /* MatchesRow.swift in Sources */,
 				E9DC2CF12ADF3F38009128D6 /* DartRow.swift in Sources */,
 				E9DC2D072ADF407C009128D6 /* ARAction.swift in Sources */,
+				E9DC2D232ADF41E7009128D6 /* GameViewController.swift in Sources */,
+				E9DC2D1E2ADF4199009128D6 /* Dart.swift in Sources */,
 				E9DC2CDC2ADF3CEF009128D6 /* MenuView.swift in Sources */,
 				E9DC2D092ADF4089009128D6 /* Route.swift in Sources */,
 				E9DC2CF62ADF3F6C009128D6 /* Color.swift in Sources */,
@@ -277,8 +325,12 @@
 				E9DC2CFE2ADF3FBA009128D6 /* SecondaryButton.swift in Sources */,
 				E9DC2CFC2ADF3FAD009128D6 /* PrimaryButton.swift in Sources */,
 				E9DC2D0B2ADF409C009128D6 /* SoundEffects.swift in Sources */,
+				E9DC2D1C2ADF418C009128D6 /* DartBoard.swift in Sources */,
 				E9DC2D002ADF4023009128D6 /* PauseView.swift in Sources */,
 				E9DC2CDA2ADF3CEF009128D6 /* DartsGameApp.swift in Sources */,
+				E9DC2D162ADF4137009128D6 /* DetailView.swift in Sources */,
+				E9DC2D212ADF41C9009128D6 /* ARViewContainer.swift in Sources */,
+				E9DC2D182ADF4146009128D6 /* PreviousMatchesView.swift in Sources */,
 				E9DC2D0F2ADF40E2009128D6 /* GameView.swift in Sources */,
 				E9DC2CF92ADF3F8B009128D6 /* Match.swift in Sources */,
 			);
