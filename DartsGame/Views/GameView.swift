@@ -10,7 +10,7 @@ import ARKit
 
 struct GameView: View, GameLogicDelegate {
     
-    @StateObject private var viewModel = GameViewModel()
+    @EnvironmentObject private var viewModel: GameViewModel
     @EnvironmentObject private var routerManager: NavigationRouter
     
     @State var totalScore: Int = 0

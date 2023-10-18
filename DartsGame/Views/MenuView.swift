@@ -10,6 +10,7 @@ import SwiftUI
 struct MenuView: View {
     
     @StateObject private var routeManager = NavigationRouter()
+    @StateObject private var viewModel = GameViewModel()
     
     var body: some View {
         NavigationStack(path: $routeManager.routes){
@@ -39,6 +40,7 @@ struct MenuView: View {
             }
         }
         .environmentObject(routeManager)
+        .environmentObject(viewModel)
     }
 }
 

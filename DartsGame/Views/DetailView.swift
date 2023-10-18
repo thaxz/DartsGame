@@ -39,7 +39,7 @@ struct DetailView: View {
             }
             .padding(.horizontal, 20)
         }
-        .navigationBarBackButtonHidden(true)
+        //.navigationBarBackButtonHidden(true)
     }
 }
 
