@@ -6,17 +6,22 @@
 //
 
 import Foundation
+import CoreData
 
 class GameViewModel: ObservableObject {
     
     @Published var throwNumber: Int = 0
-    
     @Published var isGameOver: Bool = false
     @Published var isPaused: Bool = false
     @Published var dartResults: [Bool]
     
+    @Published var matches: [Match] = []
+    
+    let manager = CoreDataManager.shared
+    
     init() {
         self.dartResults = Array(repeating: false, count: 5)
+        fetchMatches()
     }
     
     var match: MyMatch?
@@ -49,7 +54,38 @@ class GameViewModel: ObservableObject {
         self.match = MyMatch(id: 3, points: self.points, dartStatus: boolArrayToString(dartResults), timePassed: timePassed)
     }
     
-    // MATCH LOGIC
+    //MARK: CORE DATA
+    
+    // Fetch
+    func fetchMatches(){
+        // creating request
+        let request = NSFetchRequest<Match>(entityName: "Match")
+        // making the request
+        do {
+            // saving in a place that our views are subscribed to
+            matches = try manager.context.fetch(request)
+        } catch {
+            print("error fetching \(error)")
+        }
+    }
+    
+    // Create
+    func addMatch(points: Int, dartStatus: String, timePassed: String){
+        let newMatch = Match(context: manager.context)
+        newMatch.id = Int16(matches.count + 1)
+        newMatch.points = Int16(points)
+        newMatch.timePassed = timePassed
+        newMatch.dartStatus = dartStatus
+        saveData()
+    }
+    
+    // SAVE
+    func saveData(){
+        manager.save()
+        fetchMatches()
+    }
+    
+    //MARK: MATCH LOGIC
     
     func boolArrayToString(_ boolArray: [Bool]) -> String {
         let stringArray = boolArray.map { String($0) }
