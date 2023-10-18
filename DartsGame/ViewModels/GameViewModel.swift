@@ -19,7 +19,7 @@ class GameViewModel: ObservableObject {
         self.dartResults = Array(repeating: false, count: 5)
     }
     
-    var match: Match?
+    var match: MyMatch?
     
     var startTime: Date? = nil
     var endTime: Date? = nil
@@ -46,7 +46,7 @@ class GameViewModel: ObservableObject {
         }
         let timePassed = calculateDifferenceString(between: startTime, and: endTime)
         
-        self.match = Match(points: self.points, dartStatus: boolArrayToString(dartResults), timePassed: timePassed)
+        self.match = MyMatch(id: 3, points: self.points, dartStatus: boolArrayToString(dartResults), timePassed: timePassed)
     }
     
     // MATCH LOGIC

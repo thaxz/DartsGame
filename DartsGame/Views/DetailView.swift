@@ -11,7 +11,7 @@ struct DetailView: View {
     
     @EnvironmentObject private var routerManager: NavigationRouter
     
-    let match: Match
+    let match: MyMatch
     
     var body: some View {
         ZStack(alignment: .leading){

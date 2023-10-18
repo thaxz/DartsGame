@@ -14,8 +14,8 @@ enum Route {
     /// Put every screen here and if needs an objects, pass it ike this case yourItem(item: MyItem)
     case game
     case pause
-    case endMatch(match: Match)
-    case matchDetails(match: Match)
+    case endMatch(match: MyMatch)
+    case matchDetails(match: MyMatch)
     case previousMatches
 }
 

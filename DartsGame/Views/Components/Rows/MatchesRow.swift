@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MacthesRow: View {
-    let match: Match
+    let match: MyMatch
     var body: some View {
         ZStack(alignment: .leading){
             RoundedRectangle(cornerRadius: 20)
