@@ -7,8 +7,6 @@
 
 import Foundation
 
-// todo: change sounds
-
 enum SoundType: String {
     case collision = "collisionSound"
     case throwDart = "throwSound"

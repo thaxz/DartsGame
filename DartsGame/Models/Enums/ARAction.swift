@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+// Enum to represent all possible AR actions
+
 enum ARAction {
     
     case placeDart
