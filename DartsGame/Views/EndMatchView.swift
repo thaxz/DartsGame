@@ -68,7 +68,7 @@ extension EndMatchView {
                 .resizable()
                 .foregroundColor(Color.theme.primary)
                 .frame(width: 26, height: 26)
-            Text("IN \(match.timePassed)".uppercased())
+            Text("IN \(match.timePassed) SECONDS".uppercased())
                 .font(.custom("Futura-Medium", size: 22))
                 .foregroundColor(Color.theme.primary)
         }

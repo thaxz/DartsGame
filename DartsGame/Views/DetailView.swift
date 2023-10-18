@@ -30,7 +30,7 @@ struct DetailView: View {
                 Spacer()
                 VStack(spacing: 24){
                     PrimaryButton(title: "previous macthes") {
-                        routerManager.push(to: .previousMatches(matches: []))
+                        routerManager.popToLast()
                     }
                     SecondaryButton(title: "main menu") {
                         routerManager.popToRoot()
@@ -72,6 +72,9 @@ extension DetailView {
             VStack{
                 Image("clockImage")
                 Text("\(match.timePassed)".uppercased())
+                    .font(.custom("Futura-Bold", size: 16))
+                    .foregroundColor(.white)
+                Text("seconds".uppercased())
                     .font(.custom("Futura-Medium", size: 20))
                     .foregroundColor(.white)
             }

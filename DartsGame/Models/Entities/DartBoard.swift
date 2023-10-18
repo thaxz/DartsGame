@@ -12,7 +12,7 @@ import SceneKit
 class DartBoard: SCNNode {
     override init() {
         super.init()
-        let box = SCNBox(width: 0.3, height: 0.3, length: 0.0, chamferRadius: 0)
+        let box = SCNBox(width: 0.2, height: 0.2, length: 0.0, chamferRadius: 0)
         self.geometry = box
         let shape = SCNPhysicsShape(geometry: box, options: nil)
         self.physicsBody = SCNPhysicsBody(type: .dynamic, shape: shape)
