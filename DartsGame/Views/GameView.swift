@@ -29,7 +29,17 @@ struct GameView: View, GameLogicDelegate {
                 headerSection
                 Spacer()
                 dartsLeft
-                trowButton
+                PrimaryButton(title: "throw") {
+                    if viewModel.throwNumber < 5 {
+                        ARManager.shared.actionsStream.send(.placeDart)
+                        viewModel.throwNumber += 1
+                        if viewModel.throwNumber >= 5 {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                viewModel.gameOver()
+                            }
+                        }
+                    }
+                }
             }
             .padding(40)
             if isPaused {
@@ -79,29 +89,6 @@ extension GameView {
             .foregroundColor(.white)
     }
     
-    var trowButton: some View {
-        Button {
-            if viewModel.throwNumber < 5 {
-                ARManager.shared.actionsStream.send(.placeDart)
-                viewModel.throwNumber += 1
-                if viewModel.throwNumber >= 5 {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                        viewModel.gameOver()
-                    }
-                }
-            }
-        } label: {
-            ZStack {
-                RoundedRectangle(cornerRadius: 20)
-                    .foregroundColor(Color.theme.primary)
-                Text("trow".uppercased())
-                    .font(.custom("Futura-Medium", size: 22))
-                    .foregroundColor(.white)
-            }
-        }
-        .frame(maxWidth: .infinity)
-        .frame(height: 60)
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {
