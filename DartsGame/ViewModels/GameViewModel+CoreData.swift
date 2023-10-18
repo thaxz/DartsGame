@@ -8,11 +8,12 @@
 import Foundation
 import CoreData
 
-//MARK:  CORE DATA
+//MARK: Core Data operations in the ViewModel
 
 extension GameViewModel {
     
     // Fetch
+    /// Fetches matches from the Core Data store
     func fetchMatches(){
         let request = NSFetchRequest<Match>(entityName: "Match")
         do {
@@ -23,6 +24,7 @@ extension GameViewModel {
     }
     
     // Create
+    /// Creates a new match entity in the Core Data based on game results
     func createMatch(){
         guard let endTime = endTime,
               let startTime = startTime else {
@@ -37,11 +39,11 @@ extension GameViewModel {
         saveData()
     }
     
-    // SAVE
+    // Save
+    /// Saves data to Core Data and updates the matches array
     func saveData(){
         manager.save()
         fetchMatches()
     }
-    
     
 }

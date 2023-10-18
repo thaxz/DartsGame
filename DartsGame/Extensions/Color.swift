@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+// MARK: Color extension to define the app's color theme.
 extension Color {
     
     static let theme = ColorTheme()
