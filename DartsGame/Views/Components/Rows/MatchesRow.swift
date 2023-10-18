@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: Represents a custom SwiftUI view for displaying match details in a row format.
 struct MacthesRow: View {
     let match: Match
     var body: some View {

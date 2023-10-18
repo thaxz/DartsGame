@@ -7,9 +7,12 @@
 
 import SwiftUI
 
+// MARK: Represents the view displaying previous match records.
 struct PreviousMatchesView: View {
     
+    /// The router manager for handling navigation within the app.
     @EnvironmentObject private var routerManager: NavigationRouter
+    /// The view model for managing game logic and data.
     @EnvironmentObject private var viewModel: GameViewModel
     
     var body: some View {
@@ -28,6 +31,7 @@ struct PreviousMatchesView: View {
                 ScrollView{
                     ForEach(viewModel.matches) { match in
                         MacthesRow(match: match)
+                        /// When a previous match row is tapped, navigate to the detailed view of that match.
                             .onTapGesture {
                                 routerManager.push(to: .matchDetails(match: match))
                             }

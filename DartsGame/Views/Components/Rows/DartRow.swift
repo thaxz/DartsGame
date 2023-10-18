@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: Represents a custom SwiftUI view for displaying dart throw details in a row format.
 struct DartRow: View {
     let status: String
     let number: Int

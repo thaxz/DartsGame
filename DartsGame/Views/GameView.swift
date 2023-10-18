@@ -8,14 +8,20 @@
 import SwiftUI
 import ARKit
 
+// MARK: Represents the main game view of the application.
 struct GameView: View, GameLogicDelegate {
     
+    /// The view model responsible for managing game data and logic.
     @EnvironmentObject private var viewModel: GameViewModel
+    /// The router manager for handling navigation within the app.
     @EnvironmentObject private var routerManager: NavigationRouter
     
+    /// The total score accumulated in the game.
     @State var totalScore: Int = 0
+    /// A property indicating whether the game is paused.
     @State var isPaused: Bool = false
     
+    /// Method from the `GameLogicDelegate` protocol used to add points to the game.
     mutating func addPoint() {
         self.totalScore += 1
         self.viewModel.points += 1
@@ -39,14 +45,17 @@ struct GameView: View, GameLogicDelegate {
             }
         }
         .onAppear{
+            /// Set the start time when the view appears.
             viewModel.startTime = Date()
         }
         .onChange(of: totalScore, perform: { newValue in
+            /// Update the dart results in the view model when the total score changes.
             viewModel.updateDartResult(at: viewModel.throwNumber - 1)
             print(viewModel.dartResults)
         })
         .navigationBarBackButtonHidden(true)
         .navigationDestination(isPresented: $viewModel.isGameOver, destination: {
+            /// Navigate to the EndMatchView when the game is over.
             EndMatchView(match: viewModel.match)
         })
     }
@@ -56,6 +65,7 @@ struct GameView: View, GameLogicDelegate {
 
 extension GameView {
     
+    /// The header section displaying the score and pause button.
     var headerSection: some View{
         HStack{
             Spacer()
@@ -75,6 +85,7 @@ extension GameView {
         }
     }
     
+    /// The label displaying the current dart throw number.
     var dartsLeft: some View{
         Text("Dart \(viewModel.throwNumber) of 5")
             .font(.custom("Futura-Bold", size: 18))

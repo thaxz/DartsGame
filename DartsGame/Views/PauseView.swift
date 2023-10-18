@@ -7,8 +7,10 @@
 
 import SwiftUI
 
+// MARK: Represents the Pause view of the application.
 struct PauseView: View {
     
+    /// The router manager for handling navigation within the app.
     @EnvironmentObject private var routerManager: NavigationRouter
     
     var body: some View {
@@ -28,8 +30,9 @@ struct PauseView: View {
                         .font(.custom("Futura-Bold", size: 48))
                         .foregroundColor(.white)
                     HStack{
+                        /// Button to resume the game and navigate back to the previous view.
                         Button {
-                            ARManager.shared.actionsStream.send(.play)
+                            ARManager.shared.actionsStream.send(.play) // Sending a play action to ARManager.
                             routerManager.popToLast()
                         } label: {
                             RoundedRectangle(cornerRadius: 20)
@@ -43,6 +46,7 @@ struct PauseView: View {
                                 )
                         }
                         Spacer()
+                        // Button to return to the main menu.
                         Button {
                             routerManager.popToRoot()
                         } label: {
