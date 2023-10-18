@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: Enum to represent all possible sounds
+
 enum SoundType: String {
     case collision = "collisionSound"
     case throwDart = "throwSound"

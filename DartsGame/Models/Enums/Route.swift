@@ -8,10 +8,11 @@
 import Foundation
 import SwiftUI
 
+// MARK: Enum representing different screens in the app's navigation flow.
 enum Route {
     
     // Navigation cases
-    /// Put every screen here and if needs an objects, pass it ike this case yourItem(item: MyItem)
+    /// Put every screen here and if needs an object, pass it ike this 'case yourItem(item: MyItem)
     case game
     case help
     case pause
@@ -20,10 +21,11 @@ enum Route {
     case previousMatches
 }
 
-// MARK: Separating View Builders
+// MARK: - View and Hashable Conformance
 
 extension Route: View {
-    // Building Views according to switch self
+    /// A SwiftUI View representation of the current Route.
+    ///
     var body: some View {
         switch self {
         case .game:
@@ -46,12 +48,12 @@ extension Route: View {
 
 extension Route: Hashable {
     
-    // conforming to hashable protocol
+    /// Generates a hash value for the enum cases to conform to the Hashable protocol.
     func hash(into hasher: inout Hasher) {
         hasher.combine(self.hashValue)
     }
     
-    // conforming to equatable protocol
+    /// Compares enum cases for equality to conform to the Equatable protocol.
     static func == (lhs: Route, rhs: Route) -> Bool {
         switch (lhs, rhs){
         case (.game, .game):
