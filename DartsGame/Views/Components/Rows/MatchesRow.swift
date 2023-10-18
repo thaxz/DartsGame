@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MacthesRow: View {
-    let match: MyMatch
+    let match: Match
     var body: some View {
         ZStack(alignment: .leading){
             RoundedRectangle(cornerRadius: 20)
@@ -17,7 +17,7 @@ struct MacthesRow: View {
                 Text("Match nº \(match.id)".uppercased())
                     .font(.custom("Futura-Bold", size: 22))
                     .foregroundColor(.white)
-                Text("TOTAL TIME: \(match.timePassed) seconds".uppercased())
+                Text("TOTAL TIME: \(match.timePassed!) seconds".uppercased())
                     .font(.custom("Futura-Medium", size: 16))
                     .foregroundColor(.white)
                 Text("POINTS: \(match.points)".uppercased())
@@ -31,8 +31,3 @@ struct MacthesRow: View {
     }
 }
 
-struct MacthesRow_Previews: PreviewProvider {
-    static var previews: some View {
-        MacthesRow(match: mockMatches[0])
-    }
-}

@@ -12,7 +12,7 @@ struct PreviousMatchesView: View {
     @EnvironmentObject private var routerManager: NavigationRouter
     
     // push from core data
-    let matches: [MyMatch] = []
+    let matches: [Match] = []
     
     var body: some View {
         ZStack {

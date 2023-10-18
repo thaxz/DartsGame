@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E9984C552AE0592D00BA4136 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984C542AE0592D00BA4136 /* CoreDataManager.swift */; };
-		E9984C582AE0599F00BA4136 /* MacthesContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9984C562AE0599F00BA4136 /* MacthesContainer.xcdatamodeld */; };
+		E9984C582AE0599F00BA4136 /* MatchesContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9984C562AE0599F00BA4136 /* MatchesContainer.xcdatamodeld */; };
 		E9DC2CDA2ADF3CEF009128D6 /* DartsGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2CD92ADF3CEF009128D6 /* DartsGameApp.swift */; };
 		E9DC2CDC2ADF3CEF009128D6 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2CDB2ADF3CEF009128D6 /* MenuView.swift */; };
 		E9DC2CDE2ADF3CF1009128D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9DC2CDD2ADF3CF1009128D6 /* Assets.xcassets */; };
@@ -17,7 +17,6 @@
 		E9DC2CF12ADF3F38009128D6 /* DartRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2CF02ADF3F38009128D6 /* DartRow.swift */; };
 		E9DC2CF32ADF3F49009128D6 /* MatchesRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2CF22ADF3F49009128D6 /* MatchesRow.swift */; };
 		E9DC2CF62ADF3F6C009128D6 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2CF52ADF3F6C009128D6 /* Color.swift */; };
-		E9DC2CF92ADF3F8B009128D6 /* MyMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2CF82ADF3F8B009128D6 /* MyMatch.swift */; };
 		E9DC2CFC2ADF3FAD009128D6 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2CFB2ADF3FAD009128D6 /* PrimaryButton.swift */; };
 		E9DC2CFE2ADF3FBA009128D6 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2CFD2ADF3FBA009128D6 /* SecondaryButton.swift */; };
 		E9DC2D002ADF4023009128D6 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC2CFF2ADF4023009128D6 /* PauseView.swift */; };
@@ -57,7 +56,6 @@
 		E9DC2CF02ADF3F38009128D6 /* DartRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DartRow.swift; sourceTree = "<group>"; };
 		E9DC2CF22ADF3F49009128D6 /* MatchesRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesRow.swift; sourceTree = "<group>"; };
 		E9DC2CF52ADF3F6C009128D6 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		E9DC2CF82ADF3F8B009128D6 /* MyMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMatch.swift; sourceTree = "<group>"; };
 		E9DC2CFB2ADF3FAD009128D6 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		E9DC2CFD2ADF3FBA009128D6 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		E9DC2CFF2ADF4023009128D6 /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
@@ -189,8 +187,7 @@
 		E9DC2CF72ADF3F83009128D6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E9984C562AE0599F00BA4136 /* MacthesContainer.xcdatamodeld */,
-				E9DC2CF82ADF3F8B009128D6 /* MyMatch.swift */,
+				E9984C562AE0599F00BA4136 /* MatchesContainer.xcdatamodeld */,
 				E9DC2D0C2ADF40B2009128D6 /* Bitmask.swift */,
 				E9DC2D1A2ADF4174009128D6 /* Entities */,
 				E9DC2D2A2ADF5000009128D6 /* Protocols */,
@@ -361,8 +358,7 @@
 				E9DC2D212ADF41C9009128D6 /* ARViewContainer.swift in Sources */,
 				E9DC2D182ADF4146009128D6 /* PreviousMatchesView.swift in Sources */,
 				E9DC2D0F2ADF40E2009128D6 /* GameView.swift in Sources */,
-				E9984C582AE0599F00BA4136 /* MacthesContainer.xcdatamodeld in Sources */,
-				E9DC2CF92ADF3F8B009128D6 /* MyMatch.swift in Sources */,
+				E9984C582AE0599F00BA4136 /* MatchesContainer.xcdatamodeld in Sources */,
 				E9984C552AE0592D00BA4136 /* CoreDataManager.swift in Sources */,
 				E9DC2D272ADF435E009128D6 /* GameViewController+Logic.swift in Sources */,
 			);
@@ -579,13 +575,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		E9984C562AE0599F00BA4136 /* MacthesContainer.xcdatamodeld */ = {
+		E9984C562AE0599F00BA4136 /* MatchesContainer.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				E9984C572AE0599F00BA4136 /* MacthesContainer.xcdatamodel */,
 			);
 			currentVersion = E9984C572AE0599F00BA4136 /* MacthesContainer.xcdatamodel */;
-			path = MacthesContainer.xcdatamodeld;
+			path = MatchesContainer.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -45,7 +45,7 @@ struct GameView: View, GameLogicDelegate {
         })
         .navigationBarBackButtonHidden(true)
         .navigationDestination(isPresented: $viewModel.isGameOver, destination: {
-            EndMatchView(match: viewModel.match ?? mockMatches[0])
+            EndMatchView(match: viewModel.match)
         })
     }
 }

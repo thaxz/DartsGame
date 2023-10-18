@@ -11,7 +11,7 @@ struct EndMatchView: View {
     
     @EnvironmentObject private var routerManager: NavigationRouter
     
-    let match: MyMatch
+    let match: Match?
     
     var body: some View {
         ZStack {
@@ -55,7 +55,7 @@ extension EndMatchView {
             Text("YOU ACHIEVED")
                 .font(.custom("Futura-Medium", size: 22))
                 .foregroundColor(.white)
-            Text("\(match.points) POINTS")
+            Text("\(match?.points ?? 0) POINTS")
                 .font(.custom("Futura-Medium", size: 22))
                 .underline()
                 .foregroundColor(.white)
@@ -68,17 +68,10 @@ extension EndMatchView {
                 .resizable()
                 .foregroundColor(Color.theme.primary)
                 .frame(width: 26, height: 26)
-            Text("IN \(match.timePassed)".uppercased())
+            Text("IN \(match?.timePassed ?? "0 seconds")".uppercased())
                 .font(.custom("Futura-Medium", size: 22))
                 .foregroundColor(Color.theme.primary)
         }
     }
     
-}
-
-struct EndMatchView_Previews: PreviewProvider {
-    static var previews: some View {
-        EndMatchView(match: mockMatches[0])
-            .environmentObject(NavigationRouter())
-    }
 }

@@ -24,7 +24,7 @@ class GameViewModel: ObservableObject {
         fetchMatches()
     }
     
-    var match: MyMatch?
+    var match: Match?
     
     var startTime: Date? = nil
     var endTime: Date? = nil
@@ -43,17 +43,6 @@ class GameViewModel: ObservableObject {
         dartResults[index] = true // Substitui o valor no índice especificado
     }
     
-    // mock match
-    func createMatch(){
-        guard let endTime = endTime,
-              let startTime = startTime else {
-            return
-        }
-        let timePassed = calculateDifferenceString(between: startTime, and: endTime)
-        
-        self.match = MyMatch(id: 3, points: self.points, dartStatus: boolArrayToString(dartResults), timePassed: timePassed)
-    }
-    
     //MARK: CORE DATA
     
     // Fetch
@@ -70,12 +59,17 @@ class GameViewModel: ObservableObject {
     }
     
     // Create
-    func addMatch(points: Int, dartStatus: String, timePassed: String){
+    func createMatch(){
+        guard let endTime = endTime,
+              let startTime = startTime else {
+            return
+        }
         let newMatch = Match(context: manager.context)
         newMatch.id = Int16(matches.count + 1)
-        newMatch.points = Int16(points)
-        newMatch.timePassed = timePassed
-        newMatch.dartStatus = dartStatus
+        newMatch.points = Int16(self.points)
+        newMatch.timePassed = calculateDifferenceString(between: startTime, and: endTime)
+        newMatch.dartStatus = boolArrayToString(dartResults)
+        self.match = newMatch
         saveData()
     }
     
