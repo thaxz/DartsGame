@@ -74,9 +74,6 @@ extension DetailView {
                 Text("\(match.timePassed)".uppercased())
                     .font(.custom("Futura-Bold", size: 16))
                     .foregroundColor(.white)
-                Text("seconds".uppercased())
-                    .font(.custom("Futura-Medium", size: 20))
-                    .foregroundColor(.white)
             }
         }
         .frame(width: 180, height: 180)
