@@ -25,6 +25,14 @@ struct MacthesRow: View {
                     .foregroundColor(.white)
             }
             .padding(.horizontal, 24)
+            HStack{
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .resizable()
+                    .frame(width: 20, height: 30)
+                    .foregroundColor(.white.opacity(0.8))
+            }
+            .padding(.horizontal, 24)
         }
         .frame(maxWidth: .infinity)
         .frame(height: 130)
