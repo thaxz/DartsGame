@@ -8,20 +8,21 @@
 import Foundation
 import SceneKit
 
-// Darts that are shot
+// MARK: Class representing the darts that are thrown at the scene
+
 class Dart: SCNNode {
     override init () {
         super.init()
+        /// Creating geometry
         let sphere = SCNSphere(radius: 0.025)
         self.geometry = sphere
+        /// Creating physics shape
         let shape = SCNPhysicsShape(geometry: sphere, options: nil)
         self.physicsBody = SCNPhysicsBody(type: .dynamic, shape: shape)
         self.physicsBody?.isAffectedByGravity = false
-        
-        self.physicsBody?.categoryBitMask = CollisionCategory.darts.rawValue
-        self.physicsBody?.contactTestBitMask = CollisionCategory.dartBoard.rawValue
-        
-        // add texture
+        /// Setting collision bitmasks
+        self.physicsBody?.categoryBitMask = CollisionCategory.darts.rawValue // Applying Dart BitMask
+        self.physicsBody?.contactTestBitMask = CollisionCategory.dartBoard.rawValue // Bitmask of what is going to collide with
         let material = SCNMaterial()
         material.diffuse.contents = UIImage(named: "dart")
         self.geometry?.materials  = [material]

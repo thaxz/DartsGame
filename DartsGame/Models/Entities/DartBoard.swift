@@ -8,20 +8,21 @@
 import UIKit
 import SceneKit
 
-// Floating dartboard that randonly appears
+// MARK: Class representing a floating dartboard that randomly appears in the scene
+
 class DartBoard: SCNNode {
     override init() {
         super.init()
+        /// Creating geometry
         let box = SCNBox(width: 0.2, height: 0.2, length: 0.0, chamferRadius: 0)
         self.geometry = box
+        /// Creating physics shape
         let shape = SCNPhysicsShape(geometry: box, options: nil)
         self.physicsBody = SCNPhysicsBody(type: .dynamic, shape: shape)
         self.physicsBody?.isAffectedByGravity = false
-        
-        self.physicsBody?.categoryBitMask = CollisionCategory.dartBoard.rawValue
-        self.physicsBody?.contactTestBitMask = CollisionCategory.darts.rawValue
-        
-        // add texture
+        /// Setting collision bitmasks
+        self.physicsBody?.categoryBitMask = CollisionCategory.dartBoard.rawValue // Applying Board BitMask
+        self.physicsBody?.contactTestBitMask = CollisionCategory.darts.rawValue // Bitmask of what is going to collide with
         let material = SCNMaterial()
         material.diffuse.contents = UIImage(named: "dartboard")
         self.geometry?.materials  = [material]
