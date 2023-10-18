@@ -8,14 +8,17 @@
 import Foundation
 import CoreData
 
+// MARK: A singleton class responsible for managing Core Data
 class CoreDataManager: ObservableObject {
     
+    /// Singleton
     static let shared = CoreDataManager()
     
-    // Persistence objects
+    /// Persistence objects
     let container: NSPersistentContainer
     let context: NSManagedObjectContext
     
+    /// Initializes the Core Data manager and sets up the persistent container.
     init(){
         container = NSPersistentContainer(name: "MatchesContainer")
         container.loadPersistentStores { description, error in
@@ -26,8 +29,7 @@ class CoreDataManager: ObservableObject {
         context = container.viewContext
     }
     
-    
-    // MARK: Save
+    /// Save changes
     func save(){
         do {
             try context.save()

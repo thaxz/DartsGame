@@ -10,6 +10,8 @@ import RealityKit
 import SwiftUI
 import Combine
 
+// MARK: Custom ARKit view controller for handling the game logic and rendering.
+
 class GameViewController: UIViewController, ARSCNViewDelegate {
     
     var gameLogicDelegate: GameLogicDelegate? = nil
@@ -18,15 +20,13 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
     var player: AVAudioPlayer!
     private var cancellables: Set<AnyCancellable> = []
     
-    // MARK: View lifecycle
+    // MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         sceneView = ARSCNView()
         sceneView.delegate = self
-        //sceneView.showsStatistics = true
         view.addSubview(sceneView)
-        
         sceneView.scene = SCNScene()
         sceneView.scene.physicsWorld.contactDelegate = self
         self.addNewBoard()
@@ -48,7 +48,8 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
         sceneView.frame = view.bounds
     }
     
-    // MARK: Combine
+    // MARK: - Combine
+    /// Subscribes to the ARManager's actions stream to handle different AR actions.
     func subscribeToActionStream(){
         ARManager.shared.actionsStream
             .sink { [weak self] action in
@@ -70,6 +71,7 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
 
 extension GameViewController {
     
+    /// Handles adding points through the game logic delegate.
     func addPoint() {
         if var gameLogicDelegate = self.gameLogicDelegate {
             gameLogicDelegate.addPoint()

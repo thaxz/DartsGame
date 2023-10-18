@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: Custom component representing the app's secondary button
 struct SecondaryButton: View {
     let title: String
     let action: () -> ()

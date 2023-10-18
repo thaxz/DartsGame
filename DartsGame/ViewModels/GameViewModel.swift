@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: View model for managing game logic and data in the App
 class GameViewModel: ObservableObject {
     
     @Published var throwNumber: Int = 0
@@ -31,6 +32,7 @@ class GameViewModel: ObservableObject {
     
     //MARK:  Game Logic
     
+    /// Handles the logic when a dart is thrown during the game.
     func throwDart(){
         if throwNumber < 5 {
             ARManager.shared.actionsStream.send(.placeDart)
@@ -43,13 +45,15 @@ class GameViewModel: ObservableObject {
         }
     }
     
+    /// Updates the result of a dart throw at the specified index
     func updateDartResult(at index: Int) {
         guard index >= 0, index < dartResults.count else {
-            return // Índice fora do intervalo do array
+            return // Index out of array bounds
         }
-        dartResults[index] = true // Substitui o valor no índice especificado
+        dartResults[index] = true // Replaces the value at the specified index
     }
     
+    /// Handles the logic when the game is over.
     func gameOver(){
         isGameOver = true
         endTime = Date()
@@ -58,11 +62,19 @@ class GameViewModel: ObservableObject {
     
     //MARK: Helpers
     
+    /// Converts a boolean array to a string representation.
+    /// - Parameter boolArray: An array of boolean values to be converted to a string.
+    /// - Returns: A string representation of the boolean array.
     func boolArrayToString(_ boolArray: [Bool]) -> String {
         let stringArray = boolArray.map { String($0) }
         return "[" + stringArray.joined(separator: ", ") + "]"
     }
     
+    /// Calculates the time difference between two dates and returns a formatted string.
+    /// - Parameters:
+    ///   - startDate: The starting date.
+    ///   - endDate: The ending date.
+    /// - Returns: A string representing the time difference between the two dates.
     func calculateDifferenceString(between startDate: Date, and endDate: Date) -> String {
         let differenceInSeconds = Int(endDate.timeIntervalSince(startDate))
         if differenceInSeconds < 60 {

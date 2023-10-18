@@ -7,9 +7,12 @@
 
 import SwiftUI
 
+// MARK: Represents the main menu view of the application.
 struct MenuView: View {
     
+    /// The router manager for handling navigation within the app.
     @StateObject private var routeManager = NavigationRouter()
+    /// The view model for managing game logic and data.
     @StateObject private var viewModel = GameViewModel()
     
     var body: some View {
@@ -24,13 +27,15 @@ struct MenuView: View {
                         .padding(.top, 70)
                     Spacer()
                     PrimaryButton(title: "play") {
+                        /// Navigating to the game view.
                         routeManager.push(to: .game)
                     }
                     SecondaryButton(title: "previous macthes") {
-                        // needs to push matches from core data
+                        /// Navigating to the previous maches view.
                         routeManager.push(to: .previousMatches)
                     }
                     SecondaryButton(title: "help") {
+                        /// Navigating to the help view.
                         routeManager.push(to: .help)
                     }
                     Spacer()

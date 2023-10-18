@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: Custom component representing the app's primary button
 struct PrimaryButton: View {
     let title: String
     let action: () -> ()

@@ -7,8 +7,12 @@
 
 import SwiftUI
 
+// MARK: Represents the view providing instructions to the users about how to play the game
 struct HelpView: View {
+    
+    /// The router manager for handling navigation within the app.
     @EnvironmentObject private var routerManager: NavigationRouter
+    
     var body: some View {
         ZStack {
             Image("helpBackground")
@@ -47,12 +51,12 @@ struct HelpView: View {
 
 extension HelpView {
     
+    /// The first section of help content explaining how to play the game.
     var firstSection: some View {
         VStack(spacing: 20){
             Text("HOW TO PLAY")
                 .font(.custom("Futura-Bold", size: 35))
                 .foregroundColor(.white)
-//            Spacer()
             Text("- look for the boards around the scene".uppercased())
                 .font(.custom("Futura-Medium", size: 20))
                 .foregroundColor(.white)
@@ -75,6 +79,7 @@ extension HelpView {
         .multilineTextAlignment(.center)
     }
     
+    /// The second section of help content
     var secondSection: some View {
         VStack(spacing: 30){
             Spacer()

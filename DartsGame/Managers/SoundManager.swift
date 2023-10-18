@@ -8,6 +8,7 @@
 import Foundation
 import AVFoundation
 
+// MARK: A singleton class responsible for managing audio playback
 class SoundManager {
     
     static let shared = SoundManager()
@@ -15,6 +16,8 @@ class SoundManager {
     
     var player: AVAudioPlayer?
     
+    /// Plays a specified sound effect.
+    /// - Parameter sound: The type of sound effect to be played.
     func playSound(sound: SoundType) {
         let url = Bundle.main.url(forResource: sound.rawValue, withExtension: "mp3")
         guard url != nil else {return}
@@ -27,6 +30,8 @@ class SoundManager {
         }
     }
     
+    /// Plays a specified soundtrack in a loop.
+    /// - Parameter sound: The type of soundtrack to be played.
     func playSoundtrack(sound: SoundType) {
         let url = Bundle.main.url(forResource: sound.rawValue, withExtension: "mp3")
         guard url != nil else {return}

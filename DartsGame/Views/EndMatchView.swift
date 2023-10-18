@@ -7,10 +7,12 @@
 
 import SwiftUI
 
+// MARK: Represents the end match view displayed at the conclusion of a match
 struct EndMatchView: View {
     
+    /// The router manager for handling navigation within the app.
     @EnvironmentObject private var routerManager: NavigationRouter
-    
+    /// The match object containing game data.
     let match: Match?
     
     var body: some View {
@@ -50,6 +52,7 @@ struct EndMatchView: View {
 
 extension EndMatchView {
     
+    /// Section displaying the achieved points.
     var pointsSection: some View {
         VStack{
             Text("YOU ACHIEVED")
@@ -62,6 +65,7 @@ extension EndMatchView {
         }
     }
     
+    /// Section displaying the time elapsed during the match.
     var timeSection: some View {
         HStack{
             Image(systemName: "clock")
