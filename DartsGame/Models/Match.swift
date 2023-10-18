@@ -12,10 +12,10 @@ struct Match: Identifiable, Hashable {
     static var idCounter = 1
     var id: Int
     let points: Int
-    var dartStatus: [Bool]
-    let timePassed: Int
+    var dartStatus: String
+    let timePassed: String
     
-    init(points: Int, dartStatus: [Bool], timePassed: Int) {
+    init(points: Int, dartStatus: String, timePassed: String) {
         self.id = Match.idCounter
         Match.idCounter += 1
         self.points = points
@@ -26,8 +26,8 @@ struct Match: Identifiable, Hashable {
 }
 
 let mockMatches: [Match] = [
-    Match(points: 3, dartStatus: [false, true, true, false, true], timePassed: 60),
-    Match(points: 5, dartStatus: [true, true, true, true, true], timePassed: 120),
+    Match(points: 3, dartStatus: "[false, true, true, false, true]", timePassed: "60"),
+    Match(points: 5, dartStatus: "[true, true, true, true, true]", timePassed: "120"),
     
 ]
 

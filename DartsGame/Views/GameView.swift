@@ -39,6 +39,10 @@ struct GameView: View, GameLogicDelegate {
         .onAppear{
             viewModel.startTime = Date()
         }
+        .onChange(of: totalScore, perform: { newValue in
+            viewModel.updateDartResult(at: viewModel.throwNumber - 1)
+            print(viewModel.dartResults)
+        })
         .navigationBarBackButtonHidden(true)
         .navigationDestination(isPresented: $viewModel.isGameOver, destination: {
             EndMatchView(match: viewModel.match ?? mockMatches[0])
@@ -77,11 +81,13 @@ extension GameView {
     
     var trowButton: some View {
         Button {
-            ARManager.shared.actionsStream.send(.placeDart)
-            viewModel.throwNumber += 1
-            if viewModel.throwNumber >= 5 {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3){
-                    viewModel.gameOver()
+            if viewModel.throwNumber < 5 {
+                ARManager.shared.actionsStream.send(.placeDart)
+                viewModel.throwNumber += 1
+                if viewModel.throwNumber >= 5 {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                        viewModel.gameOver()
+                    }
                 }
             }
         } label: {

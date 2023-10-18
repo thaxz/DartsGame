@@ -13,7 +13,11 @@ class GameViewModel: ObservableObject {
     
     @Published var isGameOver: Bool = false
     @Published var isPaused: Bool = false
-    @Published var dartResults: [Bool] = []
+    @Published var dartResults: [Bool]
+    
+    init() {
+        self.dartResults = Array(repeating: false, count: 5)
+    }
     
     var match: Match?
     
@@ -27,20 +31,39 @@ class GameViewModel: ObservableObject {
         createMatch()
     }
     
+    func updateDartResult(at index: Int) {
+        guard index >= 0, index < dartResults.count else {
+            return // Índice fora do intervalo do array
+        }
+        dartResults[index] = true // Substitui o valor no índice especificado
+    }
+    
     // mock match
     func createMatch(){
         guard let endTime = endTime,
               let startTime = startTime else {
             return
         }
-        let timePassed = calculateDifferenceInSeconds(between: startTime, and: endTime)
+        let timePassed = calculateDifferenceString(between: startTime, and: endTime)
         
-        self.match = Match(points: self.points, dartStatus: [true, false, true, true, false], timePassed: timePassed)
+        self.match = Match(points: self.points, dartStatus: boolArrayToString(dartResults), timePassed: timePassed)
     }
     
-    func calculateDifferenceInSeconds(between startDate: Date, and endDate: Date) -> Int {
+    // MATCH LOGIC
+    
+    func boolArrayToString(_ boolArray: [Bool]) -> String {
+        let stringArray = boolArray.map { String($0) }
+        return "[" + stringArray.joined(separator: ", ") + "]"
+    }
+    
+    func calculateDifferenceString(between startDate: Date, and endDate: Date) -> String {
         let differenceInSeconds = Int(endDate.timeIntervalSince(startDate))
-        return differenceInSeconds
+        if differenceInSeconds < 60 {
+            return "\(differenceInSeconds) Seconds"
+        } else {
+            let differenceInMinutes = differenceInSeconds / 60
+            return "\(differenceInMinutes) Minutes"
+        }
     }
     
 }
