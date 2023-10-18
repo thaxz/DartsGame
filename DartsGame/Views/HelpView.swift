@@ -38,6 +38,7 @@ struct HelpView: View {
                     .frame(height: 70)
             }
             .padding(.horizontal, 30)
+            .navigationBarBackButtonHidden(true)
         }
     }
 }
@@ -47,11 +48,11 @@ struct HelpView: View {
 extension HelpView {
     
     var firstSection: some View {
-        VStack(spacing: 30){
+        VStack(spacing: 20){
             Text("HOW TO PLAY")
                 .font(.custom("Futura-Bold", size: 35))
                 .foregroundColor(.white)
-            Spacer()
+//            Spacer()
             Text("- look for the boards around the scene".uppercased())
                 .font(.custom("Futura-Medium", size: 20))
                 .foregroundColor(.white)
@@ -80,11 +81,12 @@ extension HelpView {
             Text("this is an ar DARTS game".uppercased())
                 .font(.custom("Futura-Medium", size: 20))
                 .foregroundColor(.white)
-            Text(" developed by thais monteiro".uppercased())
+            Text(" developed by \nthais monteiro".uppercased())
                 .font(.custom("Futura-Medium", size: 20))
                 .foregroundColor(.white)
             Spacer()
         }
+        .multilineTextAlignment(.center)
     }
     
 }
