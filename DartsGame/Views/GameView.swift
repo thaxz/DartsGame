@@ -30,15 +30,7 @@ struct GameView: View, GameLogicDelegate {
                 Spacer()
                 dartsLeft
                 PrimaryButton(title: "throw") {
-                    if viewModel.throwNumber < 5 {
-                        ARManager.shared.actionsStream.send(.placeDart)
-                        viewModel.throwNumber += 1
-                        if viewModel.throwNumber >= 5 {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                                viewModel.gameOver()
-                            }
-                        }
-                    }
+                    viewModel.throwDart()
                 }
             }
             .padding(40)

@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import CoreData
 
 class GameViewModel: ObservableObject {
     
@@ -30,10 +29,18 @@ class GameViewModel: ObservableObject {
     var endTime: Date? = nil
     var points: Int = 0
     
-    func gameOver(){
-        isGameOver = true
-        endTime = Date()
-        createMatch()
+    //MARK:  Game Logic
+    
+    func throwDart(){
+        if throwNumber < 5 {
+            ARManager.shared.actionsStream.send(.placeDart)
+            throwNumber += 1
+            if throwNumber >= 5 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                    self.gameOver()
+                }
+            }
+        }
     }
     
     func updateDartResult(at index: Int) {
@@ -43,43 +50,13 @@ class GameViewModel: ObservableObject {
         dartResults[index] = true // Substitui o valor no índice especificado
     }
     
-    //MARK: CORE DATA
-    
-    // Fetch
-    func fetchMatches(){
-        // creating request
-        let request = NSFetchRequest<Match>(entityName: "Match")
-        // making the request
-        do {
-            // saving in a place that our views are subscribed to
-            matches = try manager.context.fetch(request)
-        } catch {
-            print("error fetching \(error)")
-        }
+    func gameOver(){
+        isGameOver = true
+        endTime = Date()
+        createMatch()
     }
     
-    // Create
-    func createMatch(){
-        guard let endTime = endTime,
-              let startTime = startTime else {
-            return
-        }
-        let newMatch = Match(context: manager.context)
-        newMatch.id = Int16(matches.count + 1)
-        newMatch.points = Int16(self.points)
-        newMatch.timePassed = calculateDifferenceString(between: startTime, and: endTime)
-        newMatch.dartStatus = boolArrayToString(dartResults)
-        self.match = newMatch
-        saveData()
-    }
-    
-    // SAVE
-    func saveData(){
-        manager.save()
-        fetchMatches()
-    }
-    
-    //MARK: MATCH LOGIC
+    //MARK: Helpers
     
     func boolArrayToString(_ boolArray: [Bool]) -> String {
         let stringArray = boolArray.map { String($0) }
