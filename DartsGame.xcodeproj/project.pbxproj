@@ -47,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E911DAA72AE096650049EA12 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E9984C542AE0592D00BA4136 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		E9984C572AE0599F00BA4136 /* MacthesContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MacthesContainer.xcdatamodel; sourceTree = "<group>"; };
 		E9984C592AE0663800BA4136 /* GameViewModel+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewModel+CoreData.swift"; sourceTree = "<group>"; };
@@ -104,6 +105,7 @@
 		E9DC2CCD2ADF3CEF009128D6 = {
 			isa = PBXGroup;
 			children = (
+				E911DAA72AE096650049EA12 /* README.md */,
 				E9DC2CD82ADF3CEF009128D6 /* DartsGame */,
 				E9DC2CD72ADF3CEF009128D6 /* Products */,
 			);
