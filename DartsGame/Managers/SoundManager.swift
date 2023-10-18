@@ -15,8 +15,8 @@ class SoundManager {
     
     var player: AVAudioPlayer?
     
-    func playSoundEffect(ofType effect: SoundEffect) {
-        let url = Bundle.main.url(forResource: effect.rawValue, withExtension: "mp3")
+    func playSound(sound: SoundType) {
+        let url = Bundle.main.url(forResource: sound.rawValue, withExtension: "mp3")
         guard url != nil else {return}
         do {
             player = try AVAudioPlayer(contentsOf: url!)
@@ -27,7 +27,7 @@ class SoundManager {
         }
     }
     
-    func playSoundtrack(sound: SoundEffect) {
+    func playSoundtrack(sound: SoundType) {
         let url = Bundle.main.url(forResource: sound.rawValue, withExtension: "mp3")
         guard url != nil else {return}
         do {

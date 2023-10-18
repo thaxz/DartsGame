@@ -31,7 +31,7 @@ extension GameViewController {
     }
     
     func throwDart() {
-        SoundManager.shared.playSoundEffect(ofType: .throwDart)
+        SoundManager.shared.playSound(sound: .throwDart)
         let dartsNode = Dart()
         let (direction, position) = self.getUserVector()
         dartsNode.position = position
@@ -51,7 +51,7 @@ extension GameViewController {
     func removeNodeWithAnimation(_ node: SCNNode, isCollision: Bool) {
         if isCollision {
             // Adding collision particle
-            SoundManager.shared.playSoundEffect(ofType: .collision)
+            SoundManager.shared.playSound(sound: .collision)
             let particleSystem = SCNParticleSystem(named: "explosion", inDirectory: nil)
             let systemNode = SCNNode()
             systemNode.addParticleSystem(particleSystem!)
