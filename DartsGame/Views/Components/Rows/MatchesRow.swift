@@ -17,22 +17,17 @@ struct MacthesRow: View {
                 Text("Match nº \(match.id)".uppercased())
                     .font(.custom("Futura-Bold", size: 22))
                     .foregroundColor(.white)
-                Text("TOTAL TIME: \(match.timePassed) seconds".uppercased())
+                Text("TOTAL TIME: \(match.timePassed!)".uppercased())
                     .font(.custom("Futura-Medium", size: 16))
                     .foregroundColor(.white)
                 Text("POINTS: \(match.points)".uppercased())
                     .font(.custom("Futura-Medium", size: 16))
                     .foregroundColor(.white)
             }
-            .padding(.horizontal, 16)
+            .padding(.horizontal, 24)
         }
         .frame(maxWidth: .infinity)
-        .frame(height: 120)
+        .frame(height: 130)
     }
 }
 
-struct MacthesRow_Previews: PreviewProvider {
-    static var previews: some View {
-        MacthesRow(match: mockMatches[0])
-    }
-}

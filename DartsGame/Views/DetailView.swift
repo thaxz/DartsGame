@@ -11,13 +11,13 @@ struct DetailView: View {
     
     @EnvironmentObject private var routerManager: NavigationRouter
     
-    let match: Match
+    let match: Match?
     
     var body: some View {
         ZStack(alignment: .leading){
             Color.theme.background.ignoresSafeArea()
             VStack(alignment: .center, spacing: 30){
-                Text("match nº \(match.id)".uppercased())
+                Text("match nº \(match?.id ?? 0)".uppercased())
                     .font(.custom("Futura-Bold", size: 30))
                     .foregroundColor(.white)
                     .padding(.top, 50)
@@ -39,7 +39,7 @@ struct DetailView: View {
             }
             .padding(.horizontal, 20)
         }
-        .navigationBarBackButtonHidden(true)
+        //.navigationBarBackButtonHidden(true)
     }
 }
 
@@ -53,7 +53,7 @@ extension DetailView {
                 .foregroundColor(Color.theme.rowBg)
             VStack{
                 Image("medalImage")
-                Text("\(match.points) points".uppercased())
+                Text("\(match?.points ?? 0) points".uppercased())
                     .font(.custom("Futura-Bold", size: 20))
                     .foregroundColor(.white)
             }
@@ -67,7 +67,7 @@ extension DetailView {
                 .foregroundColor(Color.theme.rowBg)
             VStack{
                 Image("clockImage")
-                Text("\(match.timePassed)".uppercased())
+                Text("\(match?.timePassed ?? "0 seconds")".uppercased())
                     .font(.custom("Futura-Bold", size: 20))
                     .foregroundColor(.white)
             }
@@ -81,7 +81,7 @@ extension DetailView {
                 .foregroundColor(.theme.rowBg)
             VStack(spacing: 10){
                 ForEach(0..<5){ aux in
-                    DartRow(status: stringToBoolArray(match.dartStatus)[aux].description, number: aux + 1)
+                    DartRow(status: stringToBoolArray((match?.dartStatus)!)[aux].description, number: aux + 1)
                     Divider()
                 }
             }
@@ -106,9 +106,3 @@ extension DetailView {
     }
 }
 
-struct DetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailView(match: mockMatches[0])
-            .environmentObject(NavigationRouter())
-    }
-}

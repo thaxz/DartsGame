@@ -10,7 +10,7 @@ import ARKit
 
 struct GameView: View, GameLogicDelegate {
     
-    @StateObject private var viewModel = GameViewModel()
+    @EnvironmentObject private var viewModel: GameViewModel
     @EnvironmentObject private var routerManager: NavigationRouter
     
     @State var totalScore: Int = 0
@@ -29,7 +29,9 @@ struct GameView: View, GameLogicDelegate {
                 headerSection
                 Spacer()
                 dartsLeft
-                trowButton
+                PrimaryButton(title: "throw") {
+                    viewModel.throwDart()
+                }
             }
             .padding(40)
             if isPaused {
@@ -45,7 +47,7 @@ struct GameView: View, GameLogicDelegate {
         })
         .navigationBarBackButtonHidden(true)
         .navigationDestination(isPresented: $viewModel.isGameOver, destination: {
-            EndMatchView(match: viewModel.match ?? mockMatches[0])
+            EndMatchView(match: viewModel.match)
         })
     }
 }
@@ -79,29 +81,6 @@ extension GameView {
             .foregroundColor(.white)
     }
     
-    var trowButton: some View {
-        Button {
-            if viewModel.throwNumber < 5 {
-                ARManager.shared.actionsStream.send(.placeDart)
-                viewModel.throwNumber += 1
-                if viewModel.throwNumber >= 5 {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                        viewModel.gameOver()
-                    }
-                }
-            }
-        } label: {
-            ZStack {
-                RoundedRectangle(cornerRadius: 20)
-                    .foregroundColor(Color.theme.primary)
-                Text("trow".uppercased())
-                    .font(.custom("Futura-Medium", size: 22))
-                    .foregroundColor(.white)
-            }
-        }
-        .frame(maxWidth: .infinity)
-        .frame(height: 60)
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {

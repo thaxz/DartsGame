@@ -10,9 +10,7 @@ import SwiftUI
 struct PreviousMatchesView: View {
     
     @EnvironmentObject private var routerManager: NavigationRouter
-    
-    // push from core data
-    let matches: [Match] = []
+    @EnvironmentObject private var viewModel: GameViewModel
     
     var body: some View {
         ZStack {
@@ -27,8 +25,13 @@ struct PreviousMatchesView: View {
                         .foregroundColor(.white)
                         .multilineTextAlignment(.leading)
                 }
-                ForEach(matches) { match in
-                    MacthesRow(match: match)
+                ScrollView{
+                    ForEach(viewModel.matches) { match in
+                        MacthesRow(match: match)
+                            .onTapGesture {
+                                routerManager.push(to: .matchDetails(match: match))
+                            }
+                    }
                 }
                 Spacer()
                 PrimaryButton(title: "main menu") {

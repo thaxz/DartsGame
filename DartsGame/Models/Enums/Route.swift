@@ -14,8 +14,8 @@ enum Route {
     /// Put every screen here and if needs an objects, pass it ike this case yourItem(item: MyItem)
     case game
     case pause
-    case endMatch(match: Match)
-    case matchDetails(match: Match)
+    case endMatch(match: Match?)
+    case matchDetails(match: Match?)
     case previousMatches
 }
 
@@ -56,9 +56,9 @@ extension Route: Hashable {
         case (.pause, .pause):
             return true
         case (.endMatch(let lshItem), .endMatch(let rhsItem)):
-            return lshItem.id == rhsItem.id
+            return lshItem?.uuid == rhsItem?.uuid
         case (.matchDetails(let lshItem), .matchDetails(let rhsItem)):
-            return lshItem.id == rhsItem.id
+            return lshItem?.uuid == rhsItem?.uuid
         case (.previousMatches, .previousMatches):
             return true
         default:

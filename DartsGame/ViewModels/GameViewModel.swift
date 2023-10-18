@@ -10,13 +10,17 @@ import Foundation
 class GameViewModel: ObservableObject {
     
     @Published var throwNumber: Int = 0
-    
     @Published var isGameOver: Bool = false
     @Published var isPaused: Bool = false
     @Published var dartResults: [Bool]
     
+    @Published var matches: [Match] = []
+    
+    let manager = CoreDataManager.shared
+    
     init() {
         self.dartResults = Array(repeating: false, count: 5)
+        fetchMatches()
     }
     
     var match: Match?
@@ -25,10 +29,18 @@ class GameViewModel: ObservableObject {
     var endTime: Date? = nil
     var points: Int = 0
     
-    func gameOver(){
-        isGameOver = true
-        endTime = Date()
-        createMatch()
+    //MARK:  Game Logic
+    
+    func throwDart(){
+        if throwNumber < 5 {
+            ARManager.shared.actionsStream.send(.placeDart)
+            throwNumber += 1
+            if throwNumber >= 5 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                    self.gameOver()
+                }
+            }
+        }
     }
     
     func updateDartResult(at index: Int) {
@@ -38,18 +50,13 @@ class GameViewModel: ObservableObject {
         dartResults[index] = true // Substitui o valor no índice especificado
     }
     
-    // mock match
-    func createMatch(){
-        guard let endTime = endTime,
-              let startTime = startTime else {
-            return
-        }
-        let timePassed = calculateDifferenceString(between: startTime, and: endTime)
-        
-        self.match = Match(points: self.points, dartStatus: boolArrayToString(dartResults), timePassed: timePassed)
+    func gameOver(){
+        isGameOver = true
+        endTime = Date()
+        createMatch()
     }
     
-    // MATCH LOGIC
+    //MARK: Helpers
     
     func boolArrayToString(_ boolArray: [Bool]) -> String {
         let stringArray = boolArray.map { String($0) }
