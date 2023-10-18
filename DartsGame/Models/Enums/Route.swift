@@ -16,7 +16,7 @@ enum Route {
     case pause
     case endMatch(match: Match)
     case matchDetails(match: Match)
-    case previousMatches(matches: [Match])
+    case previousMatches
 }
 
 // MARK: Separating View Builders

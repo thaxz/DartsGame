@@ -16,26 +16,25 @@ struct DetailView: View {
     var body: some View {
         ZStack(alignment: .leading){
             Color.theme.background.ignoresSafeArea()
-            VStack(alignment: .leading, spacing: 30){
+            VStack(alignment: .center, spacing: 30){
                 Text("match nº \(match.id)".uppercased())
                     .font(.custom("Futura-Bold", size: 30))
                     .foregroundColor(.white)
                     .padding(.top, 50)
-                HStack {
+                HStack(alignment: .center, spacing: 30){
                     pointsSection
-                    Spacer()
                     timeSection
                 }
+                Spacer()
                 dartsSection
                 Spacer()
-                VStack(spacing: 24){
-                    PrimaryButton(title: "previous macthes") {
-                        routerManager.popToLast()
-                    }
-                    SecondaryButton(title: "main menu") {
-                        routerManager.popToRoot()
-                    }
+                PrimaryButton(title: "previous macthes") {
+                    routerManager.push(to: .previousMatches)
                 }
+                SecondaryButton(title: "main menu") {
+                    routerManager.popToRoot()
+                }
+                
                 .padding(.bottom, 20)
             }
             .padding(.horizontal, 20)
@@ -54,15 +53,12 @@ extension DetailView {
                 .foregroundColor(Color.theme.rowBg)
             VStack{
                 Image("medalImage")
-                Text("\(match.points)".uppercased())
-                    .font(.custom("Futura-Bold", size: 16))
-                    .foregroundColor(.white)
-                Text("points".uppercased())
-                    .font(.custom("Futura-Medium", size: 20))
+                Text("\(match.points) points".uppercased())
+                    .font(.custom("Futura-Bold", size: 20))
                     .foregroundColor(.white)
             }
         }
-        .frame(width: 180, height: 180)
+        .frame(width: 160, height: 160)
     }
     
     var timeSection: some View {
@@ -72,11 +68,11 @@ extension DetailView {
             VStack{
                 Image("clockImage")
                 Text("\(match.timePassed)".uppercased())
-                    .font(.custom("Futura-Bold", size: 16))
+                    .font(.custom("Futura-Bold", size: 20))
                     .foregroundColor(.white)
             }
         }
-        .frame(width: 180, height: 180)
+        .frame(width: 160, height: 160)
     }
     
     var dartsSection: some View {
@@ -84,6 +80,7 @@ extension DetailView {
             RoundedRectangle(cornerRadius: 20)
                 .foregroundColor(.theme.rowBg)
             VStack(spacing: 20){
+
                 ForEach(0..<5){ aux in
                     DartRow(status: stringToBoolArray(match.dartStatus)[aux].description, number: aux + 1)
                 }

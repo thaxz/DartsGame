@@ -27,7 +27,7 @@ struct MenuView: View {
                     }
                     SecondaryButton(title: "previous macthes") {
                         // needs to push matches from core data
-                        routeManager.push(to: .previousMatches(matches: []))
+                        routeManager.push(to: .previousMatches)
                     }
                     Spacer()
                         .frame(height: 80)
