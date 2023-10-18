@@ -14,7 +14,7 @@ struct PauseView: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .background(.thinMaterial)
+                .background(.black.opacity(0.8))
                 .ignoresSafeArea()
             ZStack {
                 RoundedRectangle(cornerRadius: 40)

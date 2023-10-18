@@ -13,6 +13,7 @@ enum Route {
     // Navigation cases
     /// Put every screen here and if needs an objects, pass it ike this case yourItem(item: MyItem)
     case game
+    case help
     case pause
     case endMatch(match: Match?)
     case matchDetails(match: Match?)
@@ -27,6 +28,8 @@ extension Route: View {
         switch self {
         case .game:
             GameView()
+        case .help:
+            HelpView()
         case .pause:
             PauseView()
         case .endMatch(let match):
@@ -52,6 +55,8 @@ extension Route: Hashable {
     static func == (lhs: Route, rhs: Route) -> Bool {
         switch (lhs, rhs){
         case (.game, .game):
+            return true
+        case (.help, .help):
             return true
         case (.pause, .pause):
             return true
