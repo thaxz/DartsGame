@@ -81,13 +81,14 @@ extension GameView {
     
     var trowButton: some View {
         Button {
-            if viewModel.throwNumber >= 5 {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2){
-                    viewModel.gameOver()
-                }
-            } else {
+            if viewModel.throwNumber < 5 {
                 ARManager.shared.actionsStream.send(.placeDart)
                 viewModel.throwNumber += 1
+                if viewModel.throwNumber >= 5 {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                        viewModel.gameOver()
+                    }
+                }
             }
         } label: {
             ZStack {

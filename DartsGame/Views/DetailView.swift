@@ -79,10 +79,10 @@ extension DetailView {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
                 .foregroundColor(.theme.rowBg)
-            VStack(spacing: 20){
-
+            VStack(spacing: 10){
                 ForEach(0..<5){ aux in
                     DartRow(status: stringToBoolArray(match.dartStatus)[aux].description, number: aux + 1)
+                    Divider()
                 }
             }
             .padding()
