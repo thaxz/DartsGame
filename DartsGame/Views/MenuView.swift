@@ -30,8 +30,11 @@ struct MenuView: View {
                         // needs to push matches from core data
                         routeManager.push(to: .previousMatches)
                     }
+                    SecondaryButton(title: "help") {
+                        routeManager.push(to: .help)
+                    }
                     Spacer()
-                        .frame(height: 80)
+                        .frame(height: 70)
                 }
                 .padding(.horizontal, 20)
             }
