@@ -13,7 +13,7 @@ class GameViewModel: ObservableObject {
     
     @Published var isGameOver: Bool = false
     @Published var isPaused: Bool = false
-    @Published var dartResults: [Bool] = []
+    @Published var dartResults: [Bool] = [false, false, false, false, false]
     
     var match: Match?
     
@@ -26,6 +26,14 @@ class GameViewModel: ObservableObject {
         endTime = Date()
         createMatch()
     }
+    
+    @MainActor
+    func updateDartResult(at index: Int, isHit: Bool) {
+            guard index >= 0, index < dartResults.count else {
+                return // Índice fora do intervalo do array
+            }
+            dartResults[index] = isHit // Substitui o valor no índice especificado
+        }
     
     // mock match
     func createMatch(){

@@ -19,6 +19,8 @@ struct GameView: View, GameLogicDelegate {
     mutating func addPoint() {
         self.totalScore += 1
         self.viewModel.points += 1
+        self.viewModel.updateDartResult(at: viewModel.throwNumber - 1, isHit: true)
+        print(viewModel.dartResults)
     }
     
     var body: some View {
