@@ -85,7 +85,7 @@ extension DetailView {
                 .foregroundColor(.theme.rowBg)
             VStack(spacing: 20){
                 ForEach(0..<5){ aux in
-                    DartRow(status: match.dartStatus[aux].description, number: aux + 1)
+                    DartRow(status: stringToBoolArray(match.dartStatus)[aux].description, number: aux + 1)
                 }
             }
             .padding()
@@ -94,6 +94,19 @@ extension DetailView {
         
     }
     
+}
+
+// MARK: Functions
+
+extension DetailView {
+    
+    func stringToBoolArray(_ inputString: String) -> [Bool] {
+        var cleanedString = inputString.replacingOccurrences(of: "[", with: "")
+        cleanedString = cleanedString.replacingOccurrences(of: "]", with: "")
+        let stringArray = cleanedString.components(separatedBy: ", ")
+        let boolArray = stringArray.compactMap { Bool($0) }
+        return boolArray
+    }
 }
 
 struct DetailView_Previews: PreviewProvider {

@@ -46,7 +46,14 @@ class GameViewModel: ObservableObject {
         }
         let timePassed = calculateDifferenceString(between: startTime, and: endTime)
         
-        self.match = Match(points: self.points, dartStatus: dartResults, timePassed: timePassed)
+        self.match = Match(points: self.points, dartStatus: boolArrayToString(dartResults), timePassed: timePassed)
+    }
+    
+    // MATCH LOGIC
+    
+    func boolArrayToString(_ boolArray: [Bool]) -> String {
+        let stringArray = boolArray.map { String($0) }
+        return "[" + stringArray.joined(separator: ", ") + "]"
     }
     
     func calculateDifferenceString(between startDate: Date, and endDate: Date) -> String {
