@@ -16,6 +16,7 @@ enum Route {
     case pause
     case endMatch(match: Match)
     case matchDetails(match: Match)
+    // todo: tirar previous matches como parâmetro e fazer puxar do coredata toda vez que abrir ela. previous matches view model
     case previousMatches(matches: [Match])
 }
 
