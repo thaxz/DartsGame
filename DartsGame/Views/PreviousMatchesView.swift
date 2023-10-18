@@ -28,13 +28,17 @@ struct PreviousMatchesView: View {
                         .foregroundColor(.white)
                         .multilineTextAlignment(.leading)
                 }
-                ScrollView{
-                    ForEach(viewModel.matches) { match in
-                        MacthesRow(match: match)
-                        /// When a previous match row is tapped, navigate to the detailed view of that match.
-                            .onTapGesture {
-                                routerManager.push(to: .matchDetails(match: match))
-                            }
+                if viewModel.matches.isEmpty {
+                    noMatchesView
+                } else {
+                    ScrollView{
+                        ForEach(viewModel.matches) { match in
+                            MacthesRow(match: match)
+                            /// When a previous match row is tapped, navigate to the detailed view of that match.
+                                .onTapGesture {
+                                    routerManager.push(to: .matchDetails(match: match))
+                                }
+                        }
                     }
                 }
                 Spacer()
@@ -46,6 +50,27 @@ struct PreviousMatchesView: View {
         }
         .navigationBarBackButtonHidden(true)
     }
+}
+
+// MARK: Components
+
+extension PreviousMatchesView{
+    
+    var noMatchesView: some View{
+        VStack(spacing: 32){
+            Image(systemName: "exclamationmark.bubble")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 150, height: 150)
+                .foregroundColor(.theme.primary)
+            Text("You haven't played any games yet!".uppercased())
+                .font(.custom("Futura-Medium", size: 22))
+                .foregroundColor(.white)
+                .multilineTextAlignment(.center)
+        }
+        .padding(.vertical, 100)
+    }
+    
 }
 
 struct PreviousMatchesView_Previews: PreviewProvider {
