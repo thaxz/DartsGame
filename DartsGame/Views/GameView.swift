@@ -19,8 +19,6 @@ struct GameView: View, GameLogicDelegate {
     mutating func addPoint() {
         self.totalScore += 1
         self.viewModel.points += 1
-        self.viewModel.updateDartResult(at: viewModel.throwNumber - 1, isHit: true)
-        print(viewModel.dartResults)
     }
     
     var body: some View {
@@ -41,6 +39,10 @@ struct GameView: View, GameLogicDelegate {
         .onAppear{
             viewModel.startTime = Date()
         }
+        .onChange(of: totalScore, perform: { newValue in
+            viewModel.updateDartResult(at: viewModel.throwNumber - 1)
+            print(viewModel.dartResults)
+        })
         .navigationBarBackButtonHidden(true)
         .navigationDestination(isPresented: $viewModel.isGameOver, destination: {
             EndMatchView(match: viewModel.match ?? mockMatches[0])
