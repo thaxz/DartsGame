@@ -10,7 +10,6 @@ import Foundation
 // todo: change sounds
 
 enum SoundEffect: String {
-    case explosion = "explosion"
-    case collision = "collision"
-    case torpedo = "torpedo"
+    case collision = "collisionSound"
+    case throwDart = "throwSound"
 }

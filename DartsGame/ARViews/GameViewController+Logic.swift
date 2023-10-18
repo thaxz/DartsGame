@@ -31,7 +31,7 @@ extension GameViewController {
     }
     
     func throwDart() {
-        self.playSoundEffect(ofType: .torpedo)
+        SoundManager.shared.playSoundEffect(ofType: .throwDart)
         let dartsNode = Dart()
         let (direction, position) = self.getUserVector()
         dartsNode.position = position
@@ -48,26 +48,16 @@ extension GameViewController {
         sceneView.scene.rootNode.addChildNode(boardNode)
     }
     
-    func removeNodeWithAnimation(_ node: SCNNode, explosion: Bool) {
-        
-        // Play collision sound for all collisions (bullet-bullet, etc.)
-        
-        self.playSoundEffect(ofType: .collision)
-        
-        if explosion {
-            
-            // Play explosion sound for bullet-ship collisions
-            
-            self.playSoundEffect(ofType: .explosion)
-            
+    func removeNodeWithAnimation(_ node: SCNNode, isCollision: Bool) {
+        if isCollision {
+            // Adding collision particle
+            SoundManager.shared.playSoundEffect(ofType: .collision)
             let particleSystem = SCNParticleSystem(named: "explosion", inDirectory: nil)
             let systemNode = SCNNode()
             systemNode.addParticleSystem(particleSystem!)
-            // place explosion where node is
             systemNode.position = node.position
             sceneView.scene.rootNode.addChildNode(systemNode)
         }
-        
         // remove node
         node.removeFromParentNode()
     }
@@ -85,25 +75,5 @@ extension GameViewController {
     
     func floatBetween(_ first: Float,  and second: Float) -> Float { // random float between upper and lower bound (inclusive)
         return (Float(arc4random()) / Float(UInt32.max)) * (first - second) + second
-    }
-    
-    // MARK: - Sound Effects
-    // todo: create sound manager and change sounds
-    
-    func playSoundEffect(ofType effect: SoundEffect) {
-        // Async to avoid substantial cost to graphics processing (may result in sound effect delay however)
-        DispatchQueue.main.async {
-            do
-            {
-                if let effectURL = Bundle.main.url(forResource: effect.rawValue, withExtension: "mp3") {
-                    
-                    self.player = try AVAudioPlayer(contentsOf: effectURL)
-                    self.player.play()
-                }
-            }
-            catch let error as NSError {
-                print(error.description)
-            }
-        }
     }
 }
